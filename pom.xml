@@ -1,3 +1,84 @@
+<!DOCTYPE project [
+        <!ELEMENT project (modelVersion|groupId|artifactId|packaging|version|name|description|url|organization|licenses|parent|developers|mailingLists|scm|dependencyManagement|profiles|properties|modules|build)*>
+        <!ATTLIST project
+                xmlns CDATA #REQUIRED
+                xmlns:xsi CDATA #REQUIRED
+                xsi:schemaLocation CDATA #REQUIRED>
+        <!ELEMENT modelVersion (#PCDATA)>
+        <!ELEMENT groupId (#PCDATA)>
+        <!ELEMENT artifactId (#PCDATA)>
+        <!ELEMENT packaging (#PCDATA)>
+        <!ELEMENT version (#PCDATA)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT url (#PCDATA)>
+        <!ELEMENT organization (name|url)*>
+        <!ELEMENT licenses (license)*>
+        <!ELEMENT license (name|url|distribution)*>
+        <!ELEMENT distribution (#PCDATA)>
+        <!ELEMENT parent (groupId|artifactId|version)*>
+        <!ELEMENT developers (developer)*>
+        <!ELEMENT developer (id|name|email)*>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ELEMENT mailingLists (mailingList)*>
+        <!ELEMENT mailingList (name|subscribe|unsubscribe)*>
+        <!ELEMENT subscribe (#PCDATA)>
+        <!ELEMENT unsubscribe (#PCDATA)>
+        <!ELEMENT scm (connection|developerConnection|url|tag)*>
+        <!ELEMENT connection (#PCDATA)>
+        <!ELEMENT developerConnection (#PCDATA)>
+        <!ELEMENT tag (#PCDATA)>
+        <!ELEMENT dependencyManagement (dependencies)*>
+        <!ELEMENT dependencies (dependency)*>
+        <!ELEMENT dependency (groupId|artifactId|version|exclusions|scope)*>
+        <!ELEMENT exclusions (exclusion)*>
+        <!ELEMENT exclusion (groupId|artifactId)*>
+        <!ELEMENT scope (#PCDATA)>
+        <!ELEMENT profiles (profile)*>
+        <!ELEMENT profile (id|activation|build)*>
+        <!ELEMENT activation (property)*>
+        <!ELEMENT property (name|value)*>
+        <!ELEMENT value (#PCDATA)>
+        <!ELEMENT build (plugins|pluginManagement)*>
+        <!ELEMENT plugins (plugin)*>
+        <!ELEMENT plugin (groupId|artifactId|version|executions|configuration)*>
+        <!ELEMENT executions (execution)*>
+        <!ELEMENT execution (id|phase|goals|configuration)*>
+        <!ELEMENT phase (#PCDATA)>
+        <!ELEMENT goals (goal)*>
+        <!ELEMENT goal (#PCDATA)>
+        <!ELEMENT configuration (source|target|release|useReleaseProfile|localCheckout|pushChanges|commitByProject|includes|disableXmlReport|redirectTestOutputToFile|show|nohelp|doctitle|additionalparam|acceptPomPackaging|excludedGroups|descriptors|filesets)*>
+        <!ELEMENT source (#PCDATA)>
+        <!ELEMENT target (#PCDATA)>
+        <!ELEMENT release (#PCDATA)>
+        <!ELEMENT properties (project.build.sourceEncoding|project.reporting.outputEncoding)*>
+        <!ELEMENT project.build.sourceEncoding (#PCDATA)>
+        <!ELEMENT project.reporting.outputEncoding (#PCDATA)>
+        <!ELEMENT modules (module)*>
+        <!ELEMENT module (#PCDATA)>
+        <!ELEMENT pluginManagement (plugins)*>
+        <!ELEMENT useReleaseProfile (#PCDATA)>
+        <!ELEMENT localCheckout (#PCDATA)>
+        <!ELEMENT pushChanges (#PCDATA)>
+        <!ELEMENT commitByProject (#PCDATA)>
+        <!ELEMENT includes (include)*>
+        <!ELEMENT include (#PCDATA)>
+        <!ELEMENT disableXmlReport (#PCDATA)>
+        <!ELEMENT redirectTestOutputToFile (#PCDATA)>
+        <!ELEMENT show (#PCDATA)>
+        <!ELEMENT nohelp (#PCDATA)>
+        <!ELEMENT doctitle (#PCDATA)>
+        <!ELEMENT additionalparam (#PCDATA)>
+        <!ELEMENT acceptPomPackaging (#PCDATA)>
+        <!ELEMENT excludedGroups (#PCDATA)>
+        <!ELEMENT descriptors (descriptor)*>
+        <!ELEMENT descriptor (#PCDATA)>
+        <!ELEMENT filesets (fileset)*>
+        <!ELEMENT fileset (directory|includes|followSymlinks)*>
+        <!ELEMENT directory (#PCDATA)>
+        <!ELEMENT followSymlinks (#PCDATA)>
+        ]>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -120,6 +201,19 @@
         <version>4.8.2</version>
         <scope>test</scope>
       </dependency>
+
+      <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka-clients</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.8.5</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
